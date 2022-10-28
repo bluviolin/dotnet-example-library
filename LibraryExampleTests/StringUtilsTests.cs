@@ -64,9 +64,27 @@ namespace LibraryExample.Tests
         public void EndsWithUpperTest()
         {
             Assert.IsTrue(endsWithUpper.EndsWithUpper());
-            Assert.IsTrue(endsWithLower.EndsWithUpper());
+            Assert.IsFalse(endsWithLower.EndsWithUpper());
             Assert.IsFalse(endsWithDigit.EndsWithUpper());
             Assert.IsFalse(emptyString.EndsWithUpper());
+        }
+
+        [TestMethod()]
+        public void EndsWithLowerTest()
+        {
+            Assert.IsFalse(endsWithUpper.EndsWithLower());
+            Assert.IsTrue(endsWithLower.EndsWithLower());
+            Assert.IsFalse(endsWithDigit.EndsWithLower());
+            Assert.IsFalse(emptyString.EndsWithLower());
+        }
+
+        [TestMethod()]
+        public void EndsWithDigitTest()
+        {
+            Assert.IsFalse(endsWithUpper.EndsWithDigit());
+            Assert.IsFalse(endsWithLower.EndsWithDigit());
+            Assert.IsTrue(endsWithDigit.EndsWithDigit());
+            Assert.IsFalse(emptyString.EndsWithDigit());
         }
     }
 }
