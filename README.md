@@ -1,0 +1,1 @@
+A .NET example library
