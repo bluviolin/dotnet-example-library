@@ -2,6 +2,9 @@
 {
     public static class StringUtils
     {
+        public static bool StartsWithLetter(this string str)
+            => !string.IsNullOrEmpty(str) && char.IsLetter(str[0]);
+
         public static bool StartsWithUpper(this string str)
             => !string.IsNullOrEmpty(str) && char.IsUpper(str[0]);
 

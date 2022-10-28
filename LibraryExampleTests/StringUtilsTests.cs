@@ -11,6 +11,15 @@ namespace LibraryExample.Tests
         private readonly string emptyString = String.Empty;
 
         [TestMethod()]
+        public void StartsWithLetterTest()
+        {
+            Assert.IsTrue(startsWithUpper.StartsWithLetter());
+            Assert.IsTrue(startsWithLower.StartsWithLetter());
+            Assert.IsFalse(startsWithDigit.StartsWithLetter());
+            Assert.IsFalse(emptyString.StartsWithLetter());
+        }
+
+        [TestMethod()]
         public void StartsWithUpperTest()
         {
             Assert.IsTrue(startsWithUpper.StartsWithUpper());
