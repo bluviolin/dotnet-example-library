@@ -8,6 +8,11 @@ namespace LibraryExample.Tests
         private readonly string startsWithUpper = "Aaaa";
         private readonly string startsWithLower = "aaaa";
         private readonly string startsWithDigit = "0aaaa";
+
+        private readonly string endsWithUpper = "aaaaA";
+        private readonly string endsWithLower = "aaaaa";
+        private readonly string endsWithDigit = "aaaa0";
+
         private readonly string emptyString = String.Empty;
 
         [TestMethod()]
@@ -44,6 +49,24 @@ namespace LibraryExample.Tests
             Assert.IsFalse(startsWithLower.StartsWithDigit());
             Assert.IsTrue(startsWithDigit.StartsWithDigit());
             Assert.IsFalse(emptyString.StartsWithDigit());
+        }
+
+        [TestMethod()]
+        public void EndsWithLetterTest()
+        {
+            Assert.IsTrue(endsWithUpper.EndsWithLetter());
+            Assert.IsTrue(endsWithLower.EndsWithLetter());
+            Assert.IsFalse(endsWithDigit.EndsWithLetter());
+            Assert.IsFalse(emptyString.EndsWithLetter());
+        }
+
+        [TestMethod()]
+        public void EndsWithUpperTest()
+        {
+            Assert.IsTrue(endsWithUpper.EndsWithUpper());
+            Assert.IsTrue(endsWithLower.EndsWithUpper());
+            Assert.IsFalse(endsWithDigit.EndsWithUpper());
+            Assert.IsFalse(emptyString.EndsWithUpper());
         }
     }
 }
