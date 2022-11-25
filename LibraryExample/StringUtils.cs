@@ -25,5 +25,8 @@
 
         public static bool EndsWithDigit(this string str)
             => !string.IsNullOrEmpty(str) && char.IsDigit(str[^1]);
+
+        public static bool IsPalindrome(this string str)
+            => str.Equals(new String(str.Reverse().ToArray()));
     }
 }

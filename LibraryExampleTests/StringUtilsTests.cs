@@ -15,6 +15,9 @@ namespace LibraryExample.Tests
 
         private readonly string emptyString = String.Empty;
 
+        private readonly string palindrome = "ailatiditalia";
+        private readonly string notPalindrome = "abc";
+
         [TestMethod()]
         public void StartsWithLetterTest()
         {
@@ -85,6 +88,13 @@ namespace LibraryExample.Tests
             Assert.IsFalse(endsWithLower.EndsWithDigit());
             Assert.IsTrue(endsWithDigit.EndsWithDigit());
             Assert.IsFalse(emptyString.EndsWithDigit());
+        }
+
+        [TestMethod()]
+        public void IsPalindromeTest()
+        {
+            Assert.IsTrue(palindrome.IsPalindrome());
+            Assert.IsFalse(notPalindrome.IsPalindrome());
         }
     }
 }
